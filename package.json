@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node app.ts",
+    "dist": "nodemon dist/app.js",
     "build": "npx tsc",
     "prisma-migrate": "npx prisma migrate dev --name init"
   },
