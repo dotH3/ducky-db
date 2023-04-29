@@ -2,18 +2,22 @@ export interface ConfigDBProps {
     path: string;
     models: Model[];
     DBName?: string;
-    format: boolean;
 }
 
 export interface DB {
-    models: Model[];
     tables: {
         key: string;
         data: DBObject[]
     }[]
 }
 
-interface Model {
+export interface DBConfig {
+    models: Model[],
+    DBPath:string
+    DBConfigPath:string
+}
+
+export interface Model {
     key: string;
     example: DBObject;
 }

@@ -22,12 +22,11 @@ ducky.config({
         {
             key: 'producto',
             example: {
-                barra: 'joaquin',
+                nombreProducto: 'hamburger',
                 precio: 42,
             }
         },
     ],
-    format:true
 })
 
 // })();
