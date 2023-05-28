@@ -1,19 +1,15 @@
 import fs from 'fs';
 import { join } from 'path'
 import { createFile, existFile, logFile } from './helpers/files';
-import { createDatabase } from './helpers/dbMethods';
+import { createDatabase, createDatabaseConfig } from './helpers/dbMethods';
 
 export const initialize = (path:string,name:string) => {
     const databasePatch = join(path, `${name}.json`);
-
-    const databaseConfigData = {
-        "name":name,
-        "path":databasePatch
-    }
-
-    if(!existFile(databasePatch))createDatabase(databasePatch)
-    createFile('./ducky-database.json',JSON.stringify(databaseConfigData))    
-    // logFile('duckyConfig.json')
+    
+    createDatabase(databasePatch)
+    createDatabaseConfig(databasePatch)
+    // createFile('./ducky-database.json',JSON.stringify(databaseConfigData))    
+    
 }
 
 export const get = ()=>{
