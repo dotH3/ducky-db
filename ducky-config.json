@@ -1,1 +1,19 @@
-{"test":123}
+{
+  "name": "MYDUCK",
+  "path": "DB\\MYDUCK.json",
+  "models": [
+    {
+      "name": "usuarios",
+      "value": [
+        {
+          "key": "nombre",
+          "type": "string"
+        },
+        {
+          "key": "edad",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

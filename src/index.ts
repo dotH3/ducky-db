@@ -1,22 +1,14 @@
-import fs from 'fs';
-import { join } from 'path'
-import { createFile, existFile, logFile } from './helpers/files';
-import { createDatabase, createDatabaseConfig } from './helpers/dbMethods';
-
-export const initialize = (path:string,name:string) => {
-    const databasePatch = join(path, `${name}.json`);
-    
-    createDatabase(databasePatch)
-    createDatabaseConfig(databasePatch)
-    // createFile('./ducky-database.json',JSON.stringify(databaseConfigData))    
-    
-}
-
-export const get = ()=>{
-
-}
+import { Model } from './interfaces/model';
+import { initialize } from './verbs/initialize';
+import { get } from './verbs/get';
 
 
-export default {
-    initialize
+
+export class duckyDB {
+    initialize: (path:string,name:string,models:Model[])=>void;
+    get: ()=> void;
+    constructor(){
+        this.initialize = initialize
+        this.get = get
+    }
 }

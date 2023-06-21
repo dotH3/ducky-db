@@ -1,15 +1,29 @@
 import { join, resolve } from "path";
-import ducky from "./src";
+import { duckyDB } from "./src";
 
-// (() => {
-// console.clear();
 console.log('> Running!');
 
-// const root = resolve(process.cwd())
-// const folder = 'DB'
+// const models = [{
+//     name: 'usuarios',
+//     value: {
+//         key: 'usuarios',
+//         type: 'string',
+//     }
+// }]
 
-// const path = join(root,folder)
-
-ducky.initialize('./DB/', "MYDUCK")
+const ducky = new duckyDB()
+ducky.initialize('./DB/', "MYDUCK", [{
+    name: 'usuarios',
+    value: [
+        {
+            key: 'nombre',
+            type: 'string'
+        },
+        {
+            key: 'edad',
+            type: 'number'
+        }
+    ]
+}])
 
 // })();
