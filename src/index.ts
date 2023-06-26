@@ -1,14 +1,12 @@
 import { Model } from './interfaces/model';
 import { initialize } from './verbs/initialize';
 import { get } from './verbs/get';
-
-
-
-export class duckyDB {
+export class DuckyDB {
     initialize: (path:string,name:string,models:Model[])=>void;
-    get: ()=> void;
-    constructor(){
-        this.initialize = initialize
-        this.get = get
+    get: ()=>object;
+    constructor(msg?:string){
+        this.initialize = initialize;
+        this.get = get;
+        console.log(`LOG:`,msg)
     }
 }

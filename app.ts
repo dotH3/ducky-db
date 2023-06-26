@@ -1,17 +1,6 @@
-import { join, resolve } from "path";
-import { duckyDB } from "./src";
+import { DuckyDB } from "./src";
+const ducky = new DuckyDB();
 
-console.log('> Running!');
-
-// const models = [{
-//     name: 'usuarios',
-//     value: {
-//         key: 'usuarios',
-//         type: 'string',
-//     }
-// }]
-
-const ducky = new duckyDB()
 ducky.initialize('./DB/', "MYDUCK", [{
     name: 'usuarios',
     value: [
@@ -25,5 +14,3 @@ ducky.initialize('./DB/', "MYDUCK", [{
         }
     ]
 }])
-
-// })();
